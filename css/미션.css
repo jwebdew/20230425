@@ -1,0 +1,186 @@
+@charset "utf-8";
+* {margin: 0; padding: 0; box-sizing: border-box;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;} 
+body {
+    color: #333;
+    line-height: 1;
+}
+.mobile {display: none;}
+.inner {
+    max-width: 1280px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+header {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+header .inner {
+    height: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .inner h1 {
+    font-size: 25px;
+}
+header .inner h1 a {}
+
+header .inner .pc {}
+header .inner .pc ul {}
+header .inner .pc > ul > li {
+    display: inline-block;
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+}
+header .inner .pc > ul > li .depth02 {
+    width: 180px;
+    position: absolute;
+    top: 58px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255);
+    text-align: center;
+    display: none;
+     
+}
+header .inner .pc > ul > li:hover .depth02 {
+    display: block;
+    
+}
+header .inner .pc > ul > li:hover .depth02 li {
+    padding: 15px 0;
+}
+header .inner .pc ul li a {}
+
+.main_visual {
+    height: 100vh;
+    display: flex;
+}
+.main_visual img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+.women {
+    margin: 150px 0;
+}
+.women h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.women .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.women .list figure {
+    width: calc(100% / 3 - 10px);
+    height: 500px;
+}
+.women .list figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.women .list div {
+    width: calc(100% / 3);
+     
+}
+.women .list div h4 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.women .list div p {
+    font-size: 18px;
+    line-height: 1.3;
+    word-break: keep-all;
+}
+
+@media all and (max-width:1024px) {
+    .pc {display: none;}
+    .mobile {
+        display: block;
+    }
+    header .inner .m_gnb {
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: #000;
+        color: #fff;
+        padding: 50px;
+
+        display: none; 
+    }
+    header .inner .m_gnb .close {
+        display: flex;
+        justify-content: flex-end;
+    }
+    header .inner .m_gnb > ul {
+        margin-top: 100px;
+    }
+    header .inner .m_gnb > ul > li {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px dashed #fff;
+    }
+    header .inner .m_gnb > ul > li > a {
+        font-size: 18px;
+        position: relative;
+    }
+    header .inner .m_gnb > ul > li > a.on::before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: -10px;
+        top: 0px;
+        border-radius: 50%;
+        background-color: rgb(171, 232, 64);
+        z-index: -1;
+    }
+    header .inner .m_gnb > ul > li .depth02 {
+        display: none;
+    }
+    header .inner .m_gnb > ul > li .depth02 li {
+        color: #ffffffb9;
+        padding: 10px 0;
+        
+    }
+    .main_visual img {
+        width: 100%;
+    }
+    .main_visual img:last-child {
+        display: none;
+    }
+    .women {
+        margin: 80px 0;
+    }
+    .women .list figure {
+        width: calc(100% / 2 - 10px);
+        height: 300px;
+    }
+    .women .list div {
+        width: 100%;
+        margin-top: 15px;
+    }
+}
+@media all and (max-width:460px) {
+    .inner {width: calc(100% - 20px);}
+    header {height: 80px;}
+    .women {margin: 60px 0;}
+    .women h3 {font-size: 25px;}
+    .women .list figure {width: 100%; height: 50vw; margin-bottom: 10px;}
+    .women .list div h4 {font-size: 20px;}
+    .women .list div p {font-size: 16px;}
+}

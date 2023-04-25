@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/미션.css" rel="stylesheet" />
+    <script>
+        window.onload = function () {
+            //header
+            let hdOpen = document.getElementsByClassName('menu')[0];
+            let hdclose = document.getElementsByClassName('close')[0];
+            let navi = document.getElementsByClassName('m_gnb')[0];
+
+            let hdMobile = document.getElementsByClassName('m_gnb')[0];
+            let depth01 = hdMobile.getElementsByClassName('depth01');
+            let depth02 = hdMobile.getElementsByClassName('depth02');
+
+            navi.style.display = 'none';
+
+            hdOpen.onclick = function () {
+                if (navi.style.display == 'none') {
+                    navi.style.display = 'block'
+                }
+            }//menu
+
+            hdclose.onclick = function () {
+                if (navi.style.display == 'block') {
+                    navi.style.display = 'none'
+                }
+            }//menu
+
+            //모든 depth02한테 display:none 적용
+            for (let i = 0; i < depth02.length; i++) {
+                depth02[i].style.display = 'none';
+            }//for 
+
+            //1차메뉴 클릭하면 2차메뉴 나타남
+            for (let i = 0; i < depth01.length; i++) {
+                let depth02Children = depth01[i].children[1];
+
+                depth01[i].onclick = function () {
+                    if (depth02Children.style.display == 'none') {
+                        depth02Children.style.display = 'block';
+                        depth01[i].children[0].classList.add('on');
+                    } else {
+                        depth02Children.style.display = 'none'
+                        depth01[i].children[0].classList.remove('on');
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <h1>
+                <a href="#">
+                    29CM
+                </a>
+            </h1>
+            <nav class="pc">
+                <ul>
+                    <li class="depth01">
+                        <a href="#">BEST</a> 
+                    </li>
+                    <li class="depth01">
+                        <a href="#">WOMEN</a>
+                        <ul class="depth02">
+                            <li><a href="#">의류</a></li>
+                            <li><a href="#">가방</a></li>
+                            <li><a href="#">신발</a></li>
+                            <li><a href="#">액세서리</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01">
+                        <a href="#">MEN</a>
+                        <ul class="depth02">
+                            <li><a href="#">의류</a></li>
+                            <li><a href="#">가방</a></li>
+                            <li><a href="#">신발</a></li>
+                            <li><a href="#">액세서리</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01">
+                        <a href="#">INTERIOR</a>
+                        <ul class="depth02">
+                            <li><a href="#">가구,인테리어</a></li> 
+                        </ul>
+                    </li>
+                    <li class="depth01">
+                        <a href="#">FOOD</a>
+                        <ul class="depth02">
+                            <li><a href="#">가구,인테리어</a></li> 
+                        </ul>
+                    </li>
+                </ul>
+            </nav><!-- .pc_gnb -->
+
+            <span class="mobile menu">메뉴보기</span>
+            <nav class="mobile m_gnb">
+                <span class="close">메뉴닫기</span>
+                <ul>
+                    <li class="depth01">
+                        <a href="#">BEST</a> 
+                    </li>
+                    <li class="depth01">
+                        <a href="#">WOMEN</a>
+                        <ul class="depth02">
+                            <li><a href="#">의류</a></li>
+                            <li><a href="#">가방</a></li>
+                            <li><a href="#">신발</a></li>
+                            <li><a href="#">액세서리</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01">
+                        <a href="#">MEN</a>
+                        <ul class="depth02">
+                            <li><a href="#">의류</a></li>
+                            <li><a href="#">가방</a></li>
+                            <li><a href="#">신발</a></li>
+                            <li><a href="#">액세서리</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01">
+                        <a href="#">INTERIOR</a>
+                        <ul class="depth02">
+                            <li><a href="#">가구,인테리어</a></li> 
+                        </ul>
+                    </li>
+                    <li class="depth01">
+                        <a href="#">FOOD</a>
+                        <ul class="depth02">
+                            <li><a href="#">가구,인테리어</a></li> 
+                        </ul>
+                    </li>
+                </ul>
+            </nav><!-- .pc_gnb -->
+        </div><!-- .inner end -->
+    </header>
+    <section class="main_visual">
+        <img src="img/fb0657b0ec2e4bf1b1d236b398d5354a_20230424163455.jpg" alt="" />
+        <img src="img/46a8af71842f4b81b033c9fba4f83d35_20230424155644.jpg" alt="" />
+    </section><!-- .main_visual end -->
+    <section class="women">
+        <div class="inner">
+            <h3>women best</h3>
+            <div class="list">
+                <figure>
+                    <img src="img/11ede27bec25102c9474cfda3951d532.jpg" alt="" />
+                </figure>
+                <figure>
+                    <img src="img/11eddce1ae2202278fd0cb37df0f8562.jpg" alt="" />
+                </figure>
+                <div>
+                    <h4>여름의 청량함을 담은 샌들</h4>
+                    <p>새롭게 선보이는 세 가지 색상의 솔트워트 샌들을 만나보세요. 단독으로 선보이는 라떼, 여름의 청량함이 느껴지는 코발트, 시원함과 부드러움이 공존하는 라이트 블루까지 취향에
+                        따라 선택할 수 있어요. ~35+20%</p>
+                </div>
+            </div><!-- .list end -->
+        </div><!-- .inner end -->
+    </section><!-- .best end -->
+</body>
+
+</html>
